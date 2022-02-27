@@ -5,6 +5,7 @@
 #include <fmt/format.h>//for fmt::literals;
 #include <fmt/chrono.h>
 #include <fmt/compile.h>
+#include <fmt/color.h>
 
 #include <vector>
 #include <locale>
@@ -63,12 +64,19 @@ void fmt_date_time(){
     std::time_t t = std::time(nullptr);
     fmt::print("The date is {:%Y-%m-%d}.\n", fmt::localtime(t));
 }
+
 void fmt_string_compile(){
     //Converts a string literal s into a format string that will be parsed at compile time and converted
     //into efficient formatting code. Requires C++17 constexpr if compiler support.
     std::string s = fmt::format(FMT_COMPILE("compile time: {}\n"),42);
     fmt::print(s);
 }
+
+void fmt_color_style(){
+    fmt::print(fmt::emphasis::bold | fg(fmt::color::red),
+               "Elapsed time: {0:.2f} seconds\n", 1.23);
+}
+
 int main() {
     fmt__print();
     fmt__format_to();
@@ -77,5 +85,6 @@ int main() {
     fmt_utils();
     fmt_date_time();
     fmt_string_compile();
+    fmt_color_style();
     return 0;
 }
