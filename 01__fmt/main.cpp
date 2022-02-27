@@ -4,6 +4,7 @@
 #include <fmt/core.h>
 #include <fmt/format.h>//for fmt::literals;
 #include <vector>
+#include <locale>
 #include <QtCore>
 
 
@@ -33,8 +34,24 @@ void fmt__format_to(){
     qInfo() << "format_to  QVector<char>"<< out_qt;
 }
 
+//C++14 required
+void fmt__compile_time_checks(){
+    //NoK
+    //std::string s_nok = fmt::format(FMT_STRING("{:d}"), "NaN");
+    //std::string s_ok = fmt::format(FMT_STRING("{:d}"), "42");
+    //qInfo() << "Compile time checks" << s_ok.c_str();
+}
+
+void fmt_locale(){
+    std::locale::global(std::locale("en_US.UTF-8"));
+    auto s = fmt::format("{:L}", 1000000);
+    qInfo() << "Locale(en_US): " << s.c_str();
+}
+
 int main() {
     fmt__print();
     fmt__format_to();
+    fmt__compile_time_checks(); //NoK
+    fmt_locale();
     return 0;
 }
