@@ -6,6 +6,8 @@
 #include <fmt/chrono.h>
 #include <fmt/compile.h>
 #include <fmt/color.h>
+#include <fmt/ostream.h>
+#include <fmt/os.h>
 
 #include <vector>
 #include <locale>
@@ -77,6 +79,11 @@ void fmt_color_style(){
                "Elapsed time: {0:.2f} seconds\n", 1.23);
 }
 
+void fmt_system(){
+    auto out = fmt::output_file("file.txt");
+    out.print("Don't {}\n", "Panic");
+}
+
 int main() {
     fmt__print();
     fmt__format_to();
@@ -86,5 +93,6 @@ int main() {
     fmt_date_time();
     fmt_string_compile();
     fmt_color_style();
+    fmt_system();
     return 0;
 }
