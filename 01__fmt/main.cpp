@@ -9,7 +9,21 @@
 
 using namespace fmt::literals; //C++11 required
 
-void format_to(){
+void fmt__print(){
+    fmt::print("The answer is {}.\n", 42);
+    fmt::print(stderr, "Don't {}!\n", "panic");
+
+    fmt::print("I'd rather be {1} than {0}.\n", "right", "happy");
+    fmt::print("Hello, {name}! The answer is {number}. Goodbye, {name}.\n",
+               fmt::arg("name", "World"), fmt::arg("number", 42));
+
+
+    fmt::print("Hello, {name}! The answer is {number}. Goodbye, {name}.\n",
+               "name"_a="World", "number"_a=42);
+    fmt::print(stderr, "System error code = {}\n", errno);
+}
+
+void fmt__format_to(){
     auto out = std::vector<char>();
     fmt::format_to(std::back_inserter(out), "{}", 42);
     qInfo() << "format_to  std::vector<char>"<< out;
@@ -20,18 +34,7 @@ void format_to(){
 }
 
 int main() {
-    fmt::print("The answer is {}.\n", 42);
-    fmt::print("Don't {}\n", "panic");
-    fmt::print("I'd rather be {1} than {0}.\n", "right", "happy");
-    fmt::print("Hello, {name}! The answer is {number}. Goodbye, {name}.\n",
-               fmt::arg("name", "World"), fmt::arg("number", 42));
-
-
-    fmt::print("Hello, {name}! The answer is {number}. Goodbye, {name}.\n",
-               "name"_a="World", "number"_a=42);
-
-    format_to();
-    fmt::print(stderr, "System error code = {}\n", errno);
-
+    fmt__print();
+    fmt__format_to();
     return 0;
 }
