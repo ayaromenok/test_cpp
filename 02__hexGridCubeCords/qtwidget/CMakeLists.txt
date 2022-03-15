@@ -18,6 +18,10 @@ set(PROJECT_SOURCES
         main.cpp
         widget.cpp
         widget.h
+        yhexview.h
+        yhexview.cpp
+        yhexnode.h
+        yhexnode.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
