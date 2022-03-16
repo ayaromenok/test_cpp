@@ -1,7 +1,7 @@
 #include "yhexview.h"
 #include "yhexnode.h"
 
-YHexView::YHexView(QWidget *parent)
+YHexWidget::YHexWidget(QWidget *parent)
     : QGraphicsView(parent)
 {
     QGraphicsScene *scene = new QGraphicsScene(this);

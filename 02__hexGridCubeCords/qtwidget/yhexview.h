@@ -3,11 +3,11 @@
 
 #include <QGraphicsView>
 
-class YHexView : public QGraphicsView
+class YHexWidget : public QGraphicsView
 {
     Q_OBJECT
 public:
-    YHexView(QWidget *parent = nullptr);
+    YHexWidget(QWidget *parent = nullptr);
 };
 
 #endif // YHEXVIEW_H

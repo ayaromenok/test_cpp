@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    YHexView *viewWidget = new YHexView();
+    YHexWidget *viewWidget = new YHexWidget();
 
     QMainWindow w;
     w.setCentralWidget(viewWidget);

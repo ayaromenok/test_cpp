@@ -7,7 +7,7 @@
 #include <QPainterPath>
 #include <QStyleOption>
 
-YHexNode::YHexNode(YHexView *hexView, QColor clr){
+YHexNode::YHexNode(YHexWidget *hexView, QColor clr){
     setFlag(ItemSendsGeometryChanges);
     setZValue(-1);
     _path = new QPainterPath;

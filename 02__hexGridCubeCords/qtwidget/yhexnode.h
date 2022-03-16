@@ -3,13 +3,13 @@
 
 #include <QGraphicsItem>
 
-class YHexView;
+class YHexWidget;
 class QPainterPath;
 
 class YHexNode : public QGraphicsItem
 {
 public:
-    YHexNode(YHexView *hexView, QColor cl=Qt::gray);
+    YHexNode(YHexWidget *hexView, QColor cl=Qt::gray);
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
@@ -17,7 +17,7 @@ public:
 private:
     QPointF         _newPos;
     QColor          _clr;
-    YHexView        *_graph;
+    YHexWidget      *_graph;
     QPainterPath    *_path;
 };
 
