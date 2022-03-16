@@ -1,5 +1,4 @@
-#include "widget.h"
-#include "yhexview.h"
+#include "yhexwidget.h"
 
 #include <QApplication>
 #include <QMainWindow>
@@ -10,6 +9,7 @@ int main(int argc, char *argv[])
     YHexWidget *viewWidget = new YHexWidget();
 
     QMainWindow w;
+    w.setWindowTitle("YHexTest");
     w.setCentralWidget(viewWidget);
     w.show();
     return a.exec();

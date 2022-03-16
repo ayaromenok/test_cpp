@@ -1,5 +1,5 @@
 #include "yhexnode.h"
-#include "yhexview.h"
+#include "yhexwidget.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>

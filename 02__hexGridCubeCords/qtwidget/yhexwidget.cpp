@@ -1,4 +1,4 @@
-#include "yhexview.h"
+#include "yhexwidget.h"
 #include "yhexnode.h"
 
 YHexWidget::YHexWidget(QWidget *parent)

@@ -16,10 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        widget.cpp
-        widget.h
-        yhexview.h
-        yhexview.cpp
+        yhexwidget.h
+        yhexwidget.cpp
         yhexnode.h
         yhexnode.cpp
 )
